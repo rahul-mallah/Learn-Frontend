@@ -6,58 +6,34 @@ import ProfileCard from './ProfileCard'
 // - You need to use updater function for multiple
 //  state updates.
 
+// You can store arrays, objects, or even more
+// complex data structures in state.
 
 function App() {
-
-  const handleHobbyClick = (hobby) => {
-    alert(`You clicked on ${hobby}`);
-  }
-
-  const aliceProfile = {
-    name:"Alice",
-    age:"23", 
-    isMember:true, 
-    hobbies:['Reading', 'Cooking'], 
-    onClickHobby:handleHobbyClick
+  const [counters, setCounters] = useState([{id: 1, value: 0}]);
+  const addCounters = () => {
+    setCounters([...counters, {id: counters.length + 1, value: 0}]);
   };
 
-  const johnProfile = {
-    name:"John", 
-    age:42, 
-    isMember:false, 
-    hobbies:['Swimming', 'Hiking'],
-    onClickHobby:handleHobbyClick
+  const incrementCounter = (id) => {
+    setCounters(counters.map(counter => 
+      counter.id === id ? {...counter, value: counter.value +  1} : counter
+    )
+  );
   };
 
-  const [count, setCount] = useState(0);
-  const [step, setStep] = useState(1);
-
-  const incrementCount = () => {
-    setCount(count + step);
-  }
-
-  const decrementCount = () => {
-    setCount(count - step);
-  }
-
-  const incrementTwice = () => {
-    // setCount(count + 1);
-    // setCount(count + 1);
-    setCount(c => c + 1);
-    setCount(c => c + 1);
-  }
-  
   return (
-    <div className='app-container'>
-      {/* <ProfileCard {...aliceProfile}/>
-      <ProfileCard {...johnProfile}/> */}
-      <h1>Counter Value: {count}</h1>
-      <input type='number'
-            value={step}
-            onChange={(e) => setStep(parseInt(e.target.value))}/>
-      <button onClick={incrementCount}>Increment</button>
-      <button onClick={decrementCount}>Decrement</button>
-      <button onClick={incrementTwice}>+2</button>
+    <div >
+      <button onClick={addCounters}>Add Counter</button>
+      <ul>
+        {counters.map(counter => (
+          <li key={counter.id}>
+            Counter {counter.id}: {counter.value}
+            <button onClick={() => incrementCounter(counter.id)}>Increment</button>
+          </li>
+        )
+      )}
+      </ul>
     </div>
   )
 }
