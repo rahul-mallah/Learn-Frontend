@@ -1,56 +1,59 @@
-.app-container {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+.form-container{
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: #f8f9fa;
-    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+    background-color: #f9f9f9;
+    font-family: sans-serif;
 }
 
-h1{
-    color: #343a40;
+h2, h3 {
+    text-align: center;
+    color: black;
 }
 
-.profile-card {
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 15px auto;
-    max-width: 300px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.form-field{
+    margin-bottom:  20px;
 }
 
-h3{
-    color: #007bff;
+label{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-/* ul{
-    list-style-type: none;
-    padding: 0;
-}
-
-li{
-    padding: 5px 0;
-} */
-
-input{
-    width: 50px;
-    padding: 5px;
-    margin: 10px;
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
 }
 
-button{
-    padding: 5px 10px;
-    margin: 5px;
-    border: none;
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.form-data{
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #e9f7f9;
+    border: 1px solid #a3d2d6;
     border-radius: 4px;
-    background-color: blue;
-    color: white;
-    cursor: pointer;
 }
 
-button:hover{
-    background-color: darkblue;
+.form-data p{
+    font-size: 16px;
+    color: #555;
+}
+
+strong{
+    color: #333;
 }
