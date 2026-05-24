@@ -18,12 +18,14 @@ import React, { useState, useEffect } from 'react';
 // useEffect (() => {}, [count]);  // Runs on initial
 //                                 // render and when 'count' changes
 
-function useEffect_practice() {
-const [count, setCount] = useState(0);
+function UseEffectPractice() {
+  const [count, setCount] = useState(0);
+  const [anotherValue, setAnotherValue] = useState(10);
 
   useEffect(() => {
-    document.title = `Count: ${count}`;
-  }, [count]);
+    // document.title = `Count: ${count}`;
+    console.log(`useEffect triggered`);
+  }, []);
 
   const incrementCount = () => {
     setCount(count + 1);
@@ -31,10 +33,11 @@ const [count, setCount] = useState(0);
 
   return (
     <div>
-      <h1>Learn useEffect</h1>
+      <h1 className='use-effect-title'>Learn useEffect</h1>
       <button onClick={incrementCount}>Increment</button>
+      <button onClick={()=> setAnotherValue(anotherValue + 1)}>Another Value</button>
     </div>
   );
 }
-
-export default useEffect_practice;
+  
+export default UseEffectPractice;

@@ -10,8 +10,8 @@ function color_picker(){
     setBackgroundColor(color);
   }
     return (
-        <div className='App' style={{backgroundColor}}>
-      <h1>Color Picker</h1>
+        <div className='color-picker-App' style={{backgroundColor}}>
+      <h1 className='color-picker-title'>Color Picker</h1>
       <div className='color-palette'>
         {colors.map((color, index) => (
           <div
