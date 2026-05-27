@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
+
+// useRef
+// - persist value across renders
+// - Does not cause the component to
+//   re-render when the value changes
+
 function UseRefPractice(){
     const [stateCount, setStateCount] = useState(0);
     const refCount = useRef(0);
